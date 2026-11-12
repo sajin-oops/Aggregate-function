@@ -1029,5 +1029,14 @@ WHERE b.starttime >= 2012-9-01
 GROUP BY b.starttime;
 
 
+-- working query 
+SELECT m.surname,m.firstname,m.memid,MIN(b.starttime) FROM cd.bookings b
+INNER JOIN cd.members m ON m.memid = b.memid
+WHERE b.starttime >= '2012-09-01'
+GROUP BY m.surname,m.firstname,m.memid
+ORDER BY m.memid;
+
+
+
 
 
